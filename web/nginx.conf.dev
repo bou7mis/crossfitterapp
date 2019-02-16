@@ -1,0 +1,43 @@
+upstream @front {
+    server front:4200;
+}
+
+upstream @admin {
+    server admin:4300;
+}
+
+upstream @api {
+    server api:4000;
+}
+
+server {
+    listen 80;
+
+    location /api {
+        rewrite /api/(.*) /$1 break;
+        proxy_pass http://@api;
+    }
+
+    location /admin/sockjs-node {
+        rewrite /admin/(.*) /$1 break;
+        proxy_pass http://@admin;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "Upgrade";
+    }
+
+    location /admin {
+        proxy_pass http://@admin;
+    }
+
+    location / {
+        proxy_pass http://@front;
+    }
+
+    location /sockjs-node {
+        proxy_pass http://@front;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "Upgrade";
+    }
+}

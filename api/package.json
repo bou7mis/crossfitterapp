@@ -1,0 +1,24 @@
+{
+  "name": "api",
+  "version": "0.0.0",
+  "scripts": {
+    "lint": "tslint -c tslint.json -p tsconfig.json --fix",
+    "build": "lint && tsc",
+    "dev": "tsnd --respawn ./src/server.ts",
+    "start": "node ./dist/server.js",
+    "prod": "npm run build && npm run start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "private": true,
+  "dependencies": {
+    "typescript": "^3.3.3",
+    "express": "^4.16.4",
+    "body-parser": "^1.18.3",
+    "mongoose": "^5.4.13"
+  },
+  "devDependencies": {
+    "@types/express": "^4.16.1",
+    "ts-node-dev": "^1.0.0-pre.32",
+    "tslint": "^5.12.1"
+  }
+}
