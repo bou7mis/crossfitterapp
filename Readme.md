@@ -2,7 +2,7 @@
 
 Web application for crossfit box management
 
-### Development setting
+### Development setup
 
 - install docker and docker-compose on your local machine
 
