@@ -7,7 +7,7 @@ Web application for crossfit box management
 - install docker and docker-compose on your local machine
 
 ```
-> git clone git@github.com:bou7mis/corssfitapp.git
+> git clone git@github.com:bou7mis/crossfitterapp.git
 > cd crossfitapp
 > docker-compose up --build
 ```
