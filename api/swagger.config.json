@@ -1,0 +1,13 @@
+{
+  "swagger": {
+    "outputDirectory": "./dist",
+    "entryFile": "./src/index.ts",
+    "name": "crossfitapp",
+    "description": "Crossfitapp docs",
+    "license": "MIT",
+    "produces": [
+      "application/json"
+    ],
+    "version": "0.0.1"
+  }
+}
