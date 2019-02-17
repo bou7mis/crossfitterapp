@@ -8,7 +8,7 @@ Web application for crossfit box management
 
 ```
 > git clone git@github.com:bou7mis/crossfitterapp.git
-> cd crossfitapp
+> cd crossfitterapp
 > docker-compose up --build
 ```
 
