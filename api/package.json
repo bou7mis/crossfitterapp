@@ -1,24 +1,31 @@
 {
   "name": "api",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "lint": "tslint -c tslint.json -p tsconfig.json --fix",
-    "build": "lint && tsc",
-    "dev": "tsnd --respawn ./src/server.ts",
-    "start": "node ./dist/server.js",
+    "build": "tsc && npm run swagger",
+    "dev": "tsnd --respawn ./src/index.ts",
+    "start": "node ./dist/index.js",
     "prod": "npm run build && npm run start",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "swagger": "swaggerGen -c ./swagger.config.json"
   },
   "private": true,
   "dependencies": {
     "typescript": "^3.3.3",
+    "typescript-rest": "^1.8.1",
+    "typescript-rest-jwt": "^1.0.10",
+    "typescript-ioc": "^1.2.4",
     "express": "^4.16.4",
     "body-parser": "^1.18.3",
+    "typescript-rest-swagger": "^0.0.22",
     "mongoose": "^5.4.13"
   },
   "devDependencies": {
     "@types/express": "^4.16.1",
     "ts-node-dev": "^1.0.0-pre.32",
-    "tslint": "^5.12.1"
+    "tslint": "^5.12.1",
+    "typedoc": "^0.14.2",
+    "typescript-formatter": "^7.2.2"
   }
 }
