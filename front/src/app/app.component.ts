@@ -42,7 +42,7 @@ export class AppComponent implements OnInit {
 
     onCountDown() {
         if (this.capTime) {
-            this.timerSubs = timer(500, 1000)
+            this.timerSubs = timer(200, 1000)
                 .subscribe((value: number) => {
                     this.countdown = this.capTime - value;
                     if (this.countdown <= 0) {
@@ -59,7 +59,7 @@ export class AppComponent implements OnInit {
     }
 
     workoutTimer(roundCount: number) {
-        this.workSubs = timer(500, 1000)
+        this.workSubs = timer(200, 1000)
             .subscribe((value: number) => {
                 this.workTime = this.hiit.work - value;
                 if (this.workTime <= 0) {
@@ -70,7 +70,7 @@ export class AppComponent implements OnInit {
     }
 
     restTimer(roundCount: number) {
-        this.restSubs = timer(500, 1000)
+        this.restSubs = timer(200, 1000)
             .subscribe((restValue: number) => {
                 this.restTime = this.hiit.rest - restValue;
                 if (this.restTime <= 0) {
