@@ -1,0 +1,24 @@
+<h1>Tabata timer</h1>
+
+<div>
+    <label for="round">Round</label>
+    <input [(ngModel)]="tabata.rounds" name="round" id="round">
+</div>
+<div>
+    <label for="work">Work</label>
+    <input [(ngModel)]="tabata.work" name="work" id="work">
+</div>
+<div>
+    <label for="rest">Rest</label>
+    <input [(ngModel)]="tabata.rest" name="rest" id="rest">
+</div>
+
+<!--<input [(ngModel)]="capTime" name="capTime" id="cap-time">-->
+
+<button class="button-mini-2--dark" (click)="onTabataTimer()">C'est parti !</button>
+
+<h1>{{workTime}}</h1>
+<span>{{tabata.roundsLeftSubject | async}} => rounds left</span>
+<h2>{{restTime}}</h2>
+
+<hr>
